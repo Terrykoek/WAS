@@ -1,27 +1,60 @@
 const express = require('express');
+const asynHandler = require('express-async-handler');
+const authMiddleware = require('../middlewares/authMiddleware');
 const User = require('../models/User');
+const generateToken = require('../utils/generateToken');
 
 const usersRoute = express.Router();
 
-//Register
-usersRoute.post('/register', async (req, res)=> {
-    try {
-        // console.log(req.body);
-        const {name, email, password} = req.body;
-        const user = await User.create({name, email, password});
-        console.log(user);
-        res.send(user);
-    } catch (error) {
-    console.log(error);
-    }
-});
 
+//Register
+usersRoute.post(
+    '/register',
+asynHandler(async (req, res) => {
+const {name, email, password} = req.body;
+
+const userExists = await User.findOne({ email: email });
+if(userExists) {
+    throw new Error('User Exist');
+}
+
+const userCreated = await User.create({email, name, password});
+res.json({
+    _id: userCreated.id,
+    name: userCreated.name,
+    password: userCreated.password,
+    email: userCreated.password,
+    token: generateToken(userCreated._id),
+});
+})
+);
 
 
 //login
-usersRoute.post('/login', (req, res) => {
-    res.send('login route');
-});
+usersRoute.post(
+    '/login', 
+    asynHandler(async (req, res) => {
+        const {email, password} = req.body;
+
+        const user = await User.findOne({ email });
+
+        if (user ) {
+            //set status code
+            //res.status(200)
+
+            res.json({
+                _id: user.id,
+                name: user.name,
+                password: user.password,
+                email: user.password,
+                token: generateToken(user._id),
+            });
+        } else {
+            res.status(401);
+            throw new Error('Invalid credentials');
+        }
+    })
+);
 
 //update user
 usersRoute.put('/update', (req, res) => {
@@ -34,8 +67,9 @@ usersRoute.delete('/:id', (req, res) => {
 });
 
 //fetch user
-usersRoute.get('/', (req, res) => {
-    res.send('Fetch users');
+usersRoute.get('/', authMiddleware, (req, res) => {
+    console.log(req.headers);
+    res.send(req.user);
 });
 
 
