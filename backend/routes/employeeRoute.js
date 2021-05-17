@@ -62,6 +62,19 @@ expressAsyncHandler(async (req, res) => {
 
 );
 
+//delete
+employeeRouter.delete(
+    '/:id',
+    expressAsyncHandler(async (req, res) => {
+      try {
+        const employee = await Employee.findByIdAndDelete(req.params.id);
+        res.status(200);
+        res.send(employee);
+      } catch (error) {
+        res.json(error);
+      }
+    })
+  );
 
 module.exports = employeeRouter;
 
