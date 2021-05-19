@@ -4,8 +4,10 @@
   "description": "was",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon backend/server.js",
-    "server": "nodemon backend/server.js"
+    "start": "node backend/server..js",
+    "server": "nodemon backend/server.js",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
@@ -13,6 +15,7 @@
   "dependencies": {
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
+    "concurrently": "^6.1.0",
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
