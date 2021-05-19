@@ -1,10 +1,13 @@
+  
 import logo from './logo.svg';
 import './App.css';
+import AddEmployee from './components/Employees/AddEmployee';
 
 function App() {
   return (
     <div className="App">
-     <h1> i sucks</h1>
+     <h1> Work Admin System</h1>
+     <AddEmployee />
     </div>
   );
 }

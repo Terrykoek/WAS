@@ -1,6 +1,6 @@
 const { CREATE_EMPLOYEE_REQUEST, CREATE_EMPLOYEE_SUCCESS, CREATE_EMPLOYEE_FAIL } = require("../../actions/actionTypes");
 
-const createEmployeeReducer = (state = {}, action) => {
+const createEmployeeReducer = (state = {total:20}, action) => {
     switch (action.type) {
         case CREATE_EMPLOYEE_REQUEST:
             return {
@@ -13,7 +13,7 @@ const createEmployeeReducer = (state = {}, action) => {
 
         case CREATE_EMPLOYEE_FAIL:
             return {
-                loading: false,
+                loading: true,
                 error: action.payload,
             };
 

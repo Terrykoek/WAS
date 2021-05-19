@@ -3,21 +3,21 @@ const mongoose = require('mongoose');
 const employeeSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, 'Employee is required']
+        required: [false, 'Employee is required']
     },
 
     designation: {
         type: String,
-        required: true
+        required: false
     },
     experience: {
         type: String,
-        required: true
+        required: false
     },
     reporting: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        required: true,
+        required: false,
     },
 }, 
 

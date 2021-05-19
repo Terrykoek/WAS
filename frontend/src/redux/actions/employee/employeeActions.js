@@ -1,5 +1,9 @@
 import axios from 'axios';
-const { CREATE_EMPLOYEE_REQUEST, CREATE_EMPLOYEE_SUCCESS } = require("./actionTypes");
+import {
+  CREATE_EMPLOYEE_FAIL,
+  CREATE_EMPLOYEE_REQUEST,
+  CREATE_EMPLOYEE_SUCCESS,
+} from '../actionTypes';
 
 const createEmployeeAction = employeeData => {
     return async dispatch => {
@@ -24,7 +28,7 @@ const createEmployeeAction = employeeData => {
 
         } catch (error) {
             dispatch({
-                type: CRAETE_EMPLOYEE_FAIL,
+                type: CREATE_EMPLOYEE_FAIL,
                 payload: error.response && error.response.data.message,
             });
 
