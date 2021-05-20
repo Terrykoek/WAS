@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="App">
      <h1> Work Admin System</h1>
+     <h2> Welcome Manager </h2>
      <AddEmployee />
     </div>
   );

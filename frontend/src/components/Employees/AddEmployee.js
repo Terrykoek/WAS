@@ -17,10 +17,10 @@ const AddEmployee = () => {
         e.preventDefault();
 
         const data = {
-            name, designation, experience, reporting
+            name, designation, experience, reporting,
         };
 
-        dispatch(createEmployeeAction({ name, designation, experience, reporting }));
+        dispatch(createEmployeeAction({ data }));
 
     }
     return (
@@ -45,7 +45,7 @@ const AddEmployee = () => {
                             <div className='modal-content'>
                                 <div className='modal-header'>
                                     <h5 className='modal-Designation' id='exampleModalLabel'>
-                                        Create Employee
+                                        WAS                         
                                     </h5>
                                     <button
                                         type='button'
@@ -60,7 +60,6 @@ const AddEmployee = () => {
                                     <form onSubmit={handleFormSubmit}>
                                         <fieldset>
                                             <div className='form-group'>
-                                                <label htmlFor='exampleInputEmail1'>Name </label>
                                                 <input
                                                     value={name}
                                                     onChange={e => setName(e.target.value)}
@@ -73,7 +72,6 @@ const AddEmployee = () => {
                                             </div>
                                             <div className='form-group'>
 
-                                                <label htmlFor='exampleInputEmail1'>Designation </label>
                                                 <input
                                                     value={designation}
                                                     onChange={e => setDesignation(e.target.value)}
@@ -85,7 +83,6 @@ const AddEmployee = () => {
                                                 />
                                             </div>
                                             <div className='form-group'>
-                                                <label htmlFor='exampleInputPassword1'>Experience</label>
                                                 <input
                                                     value={experience}
                                                     onChange={e => setExperience(e.target.value)}
@@ -96,7 +93,6 @@ const AddEmployee = () => {
                                                 />
                                             </div>
                                             <div className='form-group'>
-                                                <label htmlFor='exampleInputPassword1'>Reporting</label>
                                                 <input
                                                     value={reporting}
                                                     onChange={e => setReporting(e.target.value)}
