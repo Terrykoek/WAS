@@ -427,8 +427,8 @@
  [type="email"],
  [type="number"] {
    direction: ltr;
- }
- */
+ } */
+ 
  ::-webkit-search-decoration {
    -webkit-appearance: none;
  }
