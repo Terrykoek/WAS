@@ -12,12 +12,24 @@ const middlewares = [thunk];
 const reducer = combineReducers({
     employeeCreated: createEmployeeReducer,
     employeesList: employeeListReducer,
-    userLogin: userReducer,
+    userLogin: userReducer, //login/register
 });
 
+//get user from localstorage and save in store
+//if there is user in localstorage, then parse JSON userdata if not null
+const userAuthFromStorage = localStorage.getItem('userAuthData')
+? JSON.parse(localStorage.getItem('userAuthData')): null;
+
+
+const initialState = {
+    userLogin: {
+        userInfo: userAuthFromStorage
+    },
+};
 
 const store = createStore(
     reducer,
+    initialState,
     composeWithDevTools(applyMiddleware(...middlewares))
   );
   

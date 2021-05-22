@@ -18,7 +18,6 @@ app.use(express.json());
 app.use('/api/users', usersRoute);
 //emloyee
 app.use('/api/employees', employeeRouter);
-console.log(process.env.MY_NAME);
 
 //Error middleware
 app.use(error.errorMiddlewareHandler);

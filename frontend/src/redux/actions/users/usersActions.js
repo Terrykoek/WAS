@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { USER_LOGIN_SUCCESS, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_REGISTER_FAIL } from '../actionTypes';
+import { USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_REGISTER_FAIL, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGIN_FAIL } from '../actionTypes';
 
 
 
@@ -7,7 +7,7 @@ const registerUserAction = (name, email, password) => {
     return async dispatch => {
         try {
             dispatch({
-                type: USER_REGISTER_REQUEST
+                type: USER_REGISTER_REQUEST,
             });
 
             //make actual call
@@ -15,7 +15,6 @@ const registerUserAction = (name, email, password) => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-
             };
 
             const { data } = await axios.post(
@@ -29,12 +28,12 @@ const registerUserAction = (name, email, password) => {
             );
 
             dispatch({
-                type: USERS_REGISTER_SUCCESS,
+                type: USER_REGISTER_SUCCESS,
                 payload: data,
             });
 
             //save the user into localstorage
-            localStorage.setitem('userAuthData', JSON.stringify(data));
+            localStorage.setItem('userAuthData', JSON.stringify(data));
         } catch (error) {
             dispatch({
                 type: USER_REGISTER_FAIL,
@@ -44,4 +43,37 @@ const registerUserAction = (name, email, password) => {
     };
 };
 
-export { registerUserAction };
+//login action
+
+const loginUserAction = (email, password) => {
+    return async dispatch => {
+        try {
+            dispatch({
+                type: USER_LOGIN_REQUEST,
+            });
+
+            //make the actual 
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            };
+            //axios holds 3 para, api, object and config 
+            const { data } = await axios.post('/api/users/login', { email, password }, config);
+            dispatch({
+                type: USER_LOGIN_SUCCESS,
+                payload: data,
+            });
+            //save the user into localstorage
+            localStorage.setItem('userAuthData', JSON.stringify(data));
+        } catch (error) {
+            dispatch({
+                type: USER_LOGIN_FAIL,
+                payload: error.response && error.response.data.message,
+            });
+
+        }
+    };
+};
+
+export { registerUserAction, loginUserAction };

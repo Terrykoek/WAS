@@ -12,7 +12,7 @@ import {
         };
       case FETCH_EMPLOYEE_SUCCESS:
         return {
-          EMPLOYEEs: action.payload,
+          employees: action.payload,
         };
   
       case FETCH_EMPLOYEE_FAIL:
