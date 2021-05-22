@@ -55,8 +55,8 @@ const loginUserAction = (email, password) => {
             //make the actual 
             const config = {
                 headers: {
-                    'Content-Type': 'application/json'
-                }
+                    'Content-Type': 'application/json',
+                },
             };
             //axios holds 3 para, api, object and config 
             const { data } = await axios.post('/api/users/login', { email, password }, config);

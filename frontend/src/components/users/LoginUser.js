@@ -1,47 +1,53 @@
 
-import React, {useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {loginUserAction} from '../../redux/actions/users/usersActions'
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUserAction } from '../../redux/actions/users/usersActions';
 import ErrorMessage from '../ErrorMessage';
 
 
-const LoginUser = ({history}) => {
-const [email, setEmail] = useState('');
-const [password, setPassword] = useState('');
+const LoginUser = ({ history }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-//grab pieces of data from our store that we want
+  //grab pieces of data from our store that we want
 
-const state = useSelector((state)=>{
-  return state.userLogin
-})
+  const state = useSelector(state => {
+    return state.userLogin
+  })
+  console.log(state);
 
-const {loading, userInfo, error} = state;
-console.log(state);
+  const { loading, userInfo, error } = state;
 
-//Submithandler
-const loginUserSubmitHandler = (e) => {
+  //Submithandler
+  const loginUserSubmitHandler = e => {
     e.preventDefault();
     console.log(email, password);
     dispatch(loginUserAction(email, password));
-    //redirect to dasshboard
-    history.push('/profile');
-};
-//if its loading, display loading text, when there is error, something went wrong is displayed
+    //redirect to dashboard
+  };
+
+  //redirect
+  console.log(state);
+  useEffect(() => {
+    if (userInfo) history.push('/profile');
+  }, [state]);
+
+  //if its loading, display loading text, when there is error, something went wrong is displayed
   return (
     <div className='row container-height'>
       <div className='col-lg-6 col-md-6 m-auto'>
         <div className='container'>
-          {loading && <h1>Loading</h1>} 
+          {loading && <h1>Loading</h1>}
           {error && <ErrorMessage> {error}</ErrorMessage>}
           <form onSubmit={loginUserSubmitHandler}>
             <fieldset>
               <div className='form-group'>
                 <label htmlFor='exampleInputEmail1'>Email address</label>
                 <input
-                value={email}
-                onChange={e=>setEmail(e.target.value)}
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
                   type='email'
                   className='form-control'
                   id='exampleInputEmail1'
@@ -52,8 +58,8 @@ const loginUserSubmitHandler = (e) => {
               <div className='form-group'>
                 <label htmlFor='exampleInputPassword1'>Password</label>
                 <input
-                 value={password}
-                 onChange={e=>setPassword(e.target.value)}
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
                   type='password'
                   className='form-control'
                   id='exampleInputPassword1'

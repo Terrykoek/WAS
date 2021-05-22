@@ -68,4 +68,4 @@ const fetchEmployeesAction = () => {
     };
   };
   
-export { createEmployeeAction }
+export { createEmployeeAction , fetchEmployeesAction}
