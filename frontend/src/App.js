@@ -6,6 +6,7 @@ import AddEmployee from './components/Employees/AddEmployee';
 import Navbar from './components/Navbar/Navbar';
 import RegisterUser from './components/users/RegisterUser';
 import LoginUser from './components/users/LoginUser';
+import Home from './components/Home/Home';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Switch>
+        <Route exact path='/' component={Home}  />
         <Route exact path='/login' component={LoginUser}  />
         <Route exact path='/employees' component={Employees}  />
         <Route exact path='/addemployee' component={AddEmployee}  />

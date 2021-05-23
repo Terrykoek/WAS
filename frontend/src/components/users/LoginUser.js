@@ -37,6 +37,7 @@ const LoginUser = ({ history }) => {
   //if its loading, display loading text, when there is error, something went wrong is displayed
   return (
     <div className='row container-height'>
+      
       <div className='col-lg-6 col-md-6 m-auto'>
         <div className='container'>
           {loading && <h1>Loading</h1>}

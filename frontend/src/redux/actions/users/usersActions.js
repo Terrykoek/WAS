@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_REGISTER_FAIL, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGIN_FAIL } from '../actionTypes';
+import { USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_REGISTER_FAIL, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGIN_FAIL, USER_LOGOUT_SUCCESS } from '../actionTypes';
 
 
 
@@ -76,4 +76,20 @@ const loginUserAction = (email, password) => {
     };
 };
 
-export { registerUserAction, loginUserAction };
+//logout
+const logoutUserAction = () => async dispatch => {  
+    try {
+        //remove user from localstorage
+        localStorage.removeItem('userAuthData');
+        dispatch( {
+            type: USER_LOGOUT_SUCCESS,
+        })
+    } catch (error) {
+
+    }
+};
+
+
+
+
+export { registerUserAction, loginUserAction, logoutUserAction };

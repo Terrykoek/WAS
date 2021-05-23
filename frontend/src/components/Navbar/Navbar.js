@@ -1,19 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import {useSelector} from 'react-redux'
+import { Link, useHistory } from 'react-router-dom';
+import {useSelector, useDispatch } from 'react-redux'
+import { logoutUserAction } from '../../redux/actions/users/usersActions';
 
 
-const Navbar = () => {
+const Navbar = props => {
 
   const state = useSelector(state => 
     state.userLogin
   );
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+  const logoutHandler = () => {
+    dispatch(logoutUserAction());
+    history.push('/');
+  }
   const {userInfo, loading, error } = state;
   return (
     <header>
       <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
         <a className='navbar-brand' to='/'>
-          Welcome Manager 
         </a>
         <button
           className='navbar-toggler'
@@ -28,13 +35,14 @@ const Navbar = () => {
 
         <div className='collapse navbar-collapse' id='navbarColor01'>
           <ul className='navbar-nav m-auto'>
-            <li className='nav-item active'>
-              <a className='nav-link' to='/'>
-                Home <span className='sr-only'>(current)</span>
-              </a>
-            </li>
+           
            {!userInfo ? (
              <>
+              <li className='nav-item active'>
+              <Link className='nav-link' to='/'>
+                Home <span className='sr-only'>(current)</span>
+              </Link>
+            </li>
             <li className='nav-item'>
                 <Link className='nav-link' to='/login'>
                   Login
@@ -48,6 +56,9 @@ const Navbar = () => {
              </>
            ): (
            <>
+            <a className='navbar-brand' to='/'>
+              Welcome 
+            </a>
             <li className='nav-item'>
                 <Link className='nav-link' to='/employees'>
                   employees
@@ -60,14 +71,14 @@ const Navbar = () => {
               </li>
 
               <li className='nav-item'>
-                <a className='nav-link' to='/users'>
+                <Link className='nav-link' to='/users'>
                   Users
-                </a>
+                </Link>
               </li>
               <li className='nav-item'>
-                <a className='nav-link' to='/login'>
+                <Link onClick = {logoutHandler} className='nav-link' to='/login'>
                   Logout
-                </a>
+                </Link>
               </li>
            </>
            )}
