@@ -17,7 +17,7 @@ const employeeSchema = new mongoose.Schema({
     reporting: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        required: false,
+        required: true,
     },
 }, 
 

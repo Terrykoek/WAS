@@ -4,6 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { createEmployeeReducer } from '../reducers/employees/createEmployeeReducer';
 import { employeeListReducer } from '../reducers/employees/employeeListReducer';
 import { userReducer } from '../reducers/users/userAuthReducer';
+import { userProfileReducer } from '../reducers/users/userProfileReducer';
 
 
 const middlewares = [thunk];
@@ -12,7 +13,8 @@ const middlewares = [thunk];
 const reducer = combineReducers({
     employeeCreated: createEmployeeReducer,
     employeesList: employeeListReducer,
-    userLogin: userReducer, //login/register
+    userLogin: userReducer, 
+    userProfile: userProfileReducer,//login/register
 });
 
 //get user from localstorage and save in store

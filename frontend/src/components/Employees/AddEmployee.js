@@ -45,7 +45,7 @@ const AddEmployee = () => {
                             <div className='modal-content'>
                                 <div className='modal-header'>
                                     <h5 className='modal-Designation' id='exampleModalLabel'>
-                                        WAS                         
+                                        Add employee                        
                                     </h5>
                                     <button
                                         type='button'
@@ -56,7 +56,6 @@ const AddEmployee = () => {
                                     </button>
                                 </div>
                                 <div className='modal-body'>
-                                    <h1 className='text-center'>Add Employee</h1>
                                     <form onSubmit={handleFormSubmit}>
                                         <fieldset>
                                             <div className='form-group'>

@@ -7,6 +7,7 @@ import Navbar from './components/Navbar/Navbar';
 import RegisterUser from './components/users/RegisterUser';
 import LoginUser from './components/users/LoginUser';
 import Home from './components/Home/Home';
+import Profile from './components/Profile/Profile';
 
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
       <Switch>
         <Route exact path='/' component={Home}  />
         <Route exact path='/login' component={LoginUser}  />
+        <Route exact path='/profile' component={Profile} />
+
         <Route exact path='/employees' component={Employees}  />
         <Route exact path='/addemployee' component={AddEmployee}  />
         <Route exact path='/register' component={RegisterUser}  />

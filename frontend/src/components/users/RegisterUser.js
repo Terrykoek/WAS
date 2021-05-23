@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { registerUserAction } from '../../redux/actions/users/usersActions';
+import photob from '../../assets/img/photob.jpg';
 
 const RegisterUser = ({history}) => {
 
@@ -28,11 +29,12 @@ const RegisterUser = ({history}) => {
     dispatch(registerUserAction(name, email, password));
   };
   return (
+
     <div className='row container-height'>
       <div className='col-lg-6 col-md-6 m-auto'>
         <div className='container'>
-          <h1 className='text-center'>Register</h1>
 
+          <h1 className='text-center'>Register</h1>
           <form onSubmit={formSubmitHandler}>
             <fieldset>
               <div className='form-group'>
