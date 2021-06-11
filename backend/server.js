@@ -22,6 +22,7 @@ app.use('/api/users', usersRoute);
 app.use('/api/employees', employeeRouter);
 //leaves
 app.use('/api/leaves', leaveRouter);
+//for npm build
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
 });
