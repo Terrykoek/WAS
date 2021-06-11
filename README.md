@@ -29,28 +29,57 @@ This application is an employee management app to allow managers and employees t
 ## Wireframes and User Stories
 
 1. Mainpage.
+
 <a href="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/MainPage.PNG" target="_blank" ><img src="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/MainPage.PNG" width="100%"></a>
 
 2. Authentication
-As a user, i want to be able to register as a manager or employee. If i were a manager, i can tick manager option on the register page
+As a user, i want to be able to register as a manager or employee. If i were a manager, i can tick manager checklist on the register page, else if i were an employee, i can register without ticking the manager checklist
 
-<a href="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/MainPage.PNG" target="_blank" ><img src="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/MainPage.PNG" width="100%"></a>
+<a href="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/registerPage.PNG" target="_blank" ><img src="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/registerPage.PNG" width="100%"></a>
 
 3. Login
-As a user, i can click on login page to login to the app based on email and password
+As a user, i can click on login page to login to the app based on my created email and password
+
+<a href="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/loginPage.PNG" target="_blank" ><img src="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/loginPage.PNG" width="100%"></a>
 
 4. Profile page
-After login, i should be able to see some basic company data and a todolist.
+After login, i should be able to see some basic company data and a todolist. 
+
+As a manager, i am able to see the following tabs in my nav bar
+
+<a href="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/profilePage.PNG" target="_blank" ><img src="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/profilePage.PNG" width="100%"></a>
+
+As an employee, i am able to see the following tabs in my nav bar
+
+<a href="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/employeePage.PNG" target="_blank" ><img src="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/employeePage.PNG" width="100%"></a>
 
 5. Create Employee
 As a manager, i want to be able to create my employee info such as name, designation, years of experience and projects assigned to employee. 
-I can also delete my employee when he resigns.
+
+<a href="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/Addemployeeform.PNG" target="_blank" ><img src="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/Addemployeeform.PNG" width="100%"></a>
+
+Employee created
+
+<a href="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/employeecreatedPage.PNG" target="_blank" ><img src="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/employeecreatedPage.PNG" width="100%"></a>
+
 
 6. Update Employee
 As a manager, i want to be able to update my employee details
 
+
+<a href="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/editEmployee.PNG" target="_blank" ><img src="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/editEmployee.PNG" width="100%"></a>
+
+Edit emplloyee form
+
+<a href="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/editEmployeePage.PNG" target="_blank" ><img src="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/editEmployeePage.PNG" width="100%"></a>
+
+
 7. View Leave
 As a manager, i can also view the leaves information submitted by my staffs and reject after checking
+
+
+<a href="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/leavePage.PNG" target="_blank" ><img src="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/leavePage.PNG" width="100%"></a>
+
 
 8. Employee user
 As an employee, i am able to submit leave request to my manager or his information.
