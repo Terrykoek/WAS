@@ -42,7 +42,7 @@ As a user, i want to be able to register as a manager or employee. If i were a m
 
 As a user, i can click on login page to login to the app based on my created email and password
 
-<a href="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/loginPage.PNG" target="_blank" ><img src="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/loginPage.PNG" width="100%"></a>
+<a href="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/loginPage.PNG" target="_blank" ><img src="https://github.com/Terrykoek/WorkAdminSystem/blob/master/wireframe/loginPage.PNG" width="100%" height="50%"></a>
 
 4. Profile page.
 
