@@ -28,7 +28,8 @@ This application is an employee management app to allow managers and employees t
 
 ## Wireframes and User Stories
 
-1. Manpage.
+1. Mainpage.
+<a href="https://github.com/Terrykoek/FIT-TRACK/blob/master/Mainpage.PNG" target="_blank" ><img src="https://github.com/Terrykoek/FIT-TRACK/blob/master/Mainpage.PNG" width="100%"></a>
 
 2. Authentication
 As a user, i want to be able to register as a manager or employee. If i were a manager, i can tick manager option on the register page
