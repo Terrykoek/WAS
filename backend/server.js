@@ -9,8 +9,11 @@ require('./config/dbConnect')();
 
 const app = express();
 
+const path = require('path');
+
 //this is a method built in express to recognize the incoming request object as a json object
 app.use(express.json());
+app.use(express.static(path.resolve(__dirname, 'build')));
 
 //Routes
 //Users
@@ -19,7 +22,9 @@ app.use('/api/users', usersRoute);
 app.use('/api/employees', employeeRouter);
 //leaves
 app.use('/api/leaves', leaveRouter);
-
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+});
 
 //Server
 const PORT = process.env.PORT || 5000;
