@@ -24,6 +24,8 @@ This application is an employee management app to allow managers and employees t
 * Redux
 * Bootstrap
 * Bcrypt
+* React-router-dom
+* React-calendar
 * React Hooks
 * React-chartjs-2
 
