@@ -4,7 +4,6 @@
 * Application Link
 * Application Description
 * Technologies
-* Dependencies
 * Wireframes and User Stories
 * Further improvements
 
