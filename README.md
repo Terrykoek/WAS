@@ -9,7 +9,7 @@
 
 ## Application Link
 
-https://WAS.herokuapp.com/
+https://workadminsystem.herokuapp.com/
 
 ## Application Description
 This application is an employee management app to allow managers and employees to stay connected. There are two levels of users for this app: Manager and Employee. Manager is able to create, edit and delete employee data while employee is able to send leave request for manager's viewing.
